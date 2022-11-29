@@ -135,7 +135,7 @@ class QuranTab extends StatelessWidget {
             padding: const EdgeInsets.all(6.0),
             child: Text(
               'Chapter  Name',
-              style: TextStyle(fontSize: 28),
+              style: Theme.of(context).textTheme.headline4,
             ),
           ),
           Container(
@@ -151,7 +151,7 @@ class QuranTab extends StatelessWidget {
               itemCount: names.length,
               separatorBuilder: (_, index) {
                 return Container(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                   width: double.infinity,
                   height: 1,
                   margin: EdgeInsets.symmetric(horizontal: 64),
