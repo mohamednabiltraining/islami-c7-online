@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_c7_online/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 
-class ThemeBottomSheet extends StatefulWidget {
+class LanguageBottomSheet extends StatefulWidget {
   @override
-  State<ThemeBottomSheet> createState() => _ThemeBottomSheetState();
+  State<LanguageBottomSheet> createState() => _LanguageBottomSheetState();
 }
 
-class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
+class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
     var settingsProvider = Provider.of<SettingsProvider>(context);
@@ -19,21 +18,21 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
         children: [
           InkWell(
               onTap: () {
-                settingsProvider.changeTheme(ThemeMode.light);
+                settingsProvider.changeLocale('en');
               },
-              child: settingsProvider.isDarkMode()
-                  ? getUnselectedItem(AppLocalizations.of(context)!.light)
-                  : getSelectedItem(AppLocalizations.of(context)!.light)),
+              child: settingsProvider.currentLang == 'en'
+                  ? getSelectedItem('English')
+                  : getUnselectedItem('English')),
           SizedBox(
             height: 12,
           ),
           InkWell(
               onTap: () {
-                settingsProvider.changeTheme(ThemeMode.dark);
+                settingsProvider.changeLocale('ar');
               },
-              child: settingsProvider.isDarkMode()
-                  ? getSelectedItem(AppLocalizations.of(context)!.dark)
-                  : getUnselectedItem(AppLocalizations.of(context)!.dark))
+              child: settingsProvider.currentLang == 'ar'
+                  ? getSelectedItem('العربيه')
+                  : getUnselectedItem('العربيه'))
         ],
       ),
     );

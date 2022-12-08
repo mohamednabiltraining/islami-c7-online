@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_c7_online/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c7_online/home/quran/quran_tab.dart';
 import 'package:islami_c7_online/home/radio/radio_tab.dart';
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Islami',
+            AppLocalizations.of(context)!.app_title,
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -42,27 +43,27 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon:
-                  const ImageIcon(AssetImage('assets/images/ic_quran.png')),
-                  label: 'Quran'),
+                      const ImageIcon(AssetImage('assets/images/ic_quran.png')),
+                  label: AppLocalizations.of(context)!.quran),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: const ImageIcon(
                       AssetImage('assets/images/ic_hadeth.png')),
-                  label: 'Hadeth'),
+                  label: AppLocalizations.of(context)!.hadeth),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon:
                       const ImageIcon(AssetImage('assets/images/ic_sebha.png')),
-                  label: 'Tasbeh'),
+                  label: AppLocalizations.of(context)!.mention),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon:
                       const ImageIcon(AssetImage('assets/images/ic_radio.png')),
-                  label: 'Radio'),
+                  label: AppLocalizations.of(context)!.radio),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: const Icon(Icons.settings),
-                  label: 'Settings'),
+                  label: AppLocalizations.of(context)!.settings),
             ]),
         body: tabs[selectedIndex],
       ),
